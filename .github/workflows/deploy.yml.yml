@@ -1,15 +1,19 @@
+#name字段是 workflow 的名称。如果省略该字段，默认为当前 workflow 的文件名。
 name: Deploy
 
+#只有`master`分支发生`push`事件时，才会触发 workflow
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# jobs字段，表示要执行的一项或多项任务。
 jobs:
+  # 每一项任务的job_id，具体名称自定义。
   deploy:
+    # 指定运行所需要的虚拟机环境
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -17,6 +21,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    # 运行步骤
     steps:
       - uses: actions/checkout@v3
         with:
@@ -26,9 +31,11 @@ jobs:
           version: 7
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 16
           cache: pnpm
+      # 该步骤运行的命令或者 action
       - run: pnpm install
+      # 步骤名称
       - name: Build
         run: pnpm run docs:build
       - uses: actions/configure-pages@v2
