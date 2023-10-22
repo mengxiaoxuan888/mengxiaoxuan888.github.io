@@ -31,7 +31,7 @@ jobs:
           version: 7
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           cache: pnpm
       # 该步骤运行的命令或者 action
       - run: pnpm install
