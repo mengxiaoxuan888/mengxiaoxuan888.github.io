@@ -14,5 +14,20 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "1.0.0-rc.22"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "search-insights"
+      ]
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "@mdit-vue/shared": "^0.12.1",
+    "medium-zoom": "^1.0.8",
+    "sass": "^1.66.1",
+    "vue": "^3.3.4"
   }
 }
