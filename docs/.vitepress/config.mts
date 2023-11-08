@@ -15,15 +15,22 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '例子', link: '/markdown-examples' },
-      { text: '笔记', link: '/biji' }
+      { text: '笔记', link: '/view/biji' }
     ],
 
     sidebar: [
       {
-        text: '例子',
+        text: '官方例子',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Markdown 示例', link: '/markdown-examples' },
+          { text: 'AIP运行案例', link: '/api-examples' }
+        ]
+      },
+      {
+        text: '个人笔记',
+        items: [
+          { text: 'CPS分销源码', link: '/view/biji' },
+          { text: '管理系统', link: '/view/management_system' }
         ]
       }
     ],
