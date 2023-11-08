@@ -23,7 +23,7 @@ export default defineConfig({
         text: '官方例子',
         items: [
           { text: 'Markdown 示例', link: '/markdown-examples' },
-          { text: 'AIP运行案例', link: '/api-examples' }
+          { text: 'Api运行案例', link: '/api-examples' }
         ]
       },
       {
